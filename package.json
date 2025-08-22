@@ -1,0 +1,56 @@
+{
+  "name": "anypoint-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol (MCP) server for MuleSoft Anypoint Platform integration with AI assistants",
+  "main": "dist/index.js",
+  "bin": {
+    "anypoint-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build:live",
+    "build": "tsc -p . && chmod +x dist/index.js",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mulesoft",
+    "anypoint",
+    "ai",
+    "claude",
+    "chatgpt",
+    "integration",
+    "api",
+    "server"
+  ],
+  "author": {
+    "name": "sato-hxx",
+    "url": "https://github.com/sato-hxx"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/sato-hxx/anypoint-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sato-hxx/anypoint-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sato-hxx/anypoint-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.1",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.10.0",
+    "zod": "^3.22.4"
+  }
+}
